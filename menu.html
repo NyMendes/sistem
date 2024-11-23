@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/1.0.0/css/font-awesome.css"
+    integrity="sha512-YX9NLok9RLg+o5JkA2Whp1kPDCBCEUolTyYykJVOe1xcaTNebXU/x02TxV0LpVYqVNJV5NVjyoMW0jHnJWICKg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="ímg/logo.png" alt="Logo da Empresa" class="logo">
+        </div>
+        <nav>
+            <a href="menu.html">Menu</a>
+            <a href="cadastro_clientes.html">Cadastro de Clientes</a>
+            <a href="lista_clientes.html">Listar Clientes</a>
+            <a href="index.html">Sair</a>
+            <div class="darkLight">
+                <div class="dark-light">
+                  <i class="bx bx-moon moon"></i>
+                  <i class="bx bx-sun sun"></i>
+                </div>
+            </div>
+        </nav>
+       
+    </header>
+    <div class="menu">
+    <div class="menuImg"></div>
+<!-- Conteúdo Principal -->
+<main class="menu-container">
+    
+    <h1>Bem-vindo ao Sistema</h1>
+    <p>Escolha uma das opções abaixo:</p>
+    <div class="menu-options">
+        <button onclick="location.href='cadastro_clientes.html'">Cadastro de Clientes</button>
+        <button onclick="location.href='lista_clientes.html'">Listar Clientes</button>
+    </div>
+</main>
+    </div>
+    <!-- Código do VLibras -->
+<!-- Início do código relacionado ao plugin VLibras -->
+<div vw class="enabled">
+    <!-- Esta div possui o atributo customizado 'vw' e a classe 'enabled', que  são usados pelo plugin VLibras para identificar e estilizar o contêiner principal do widget. -->
+   
+    <div vw-access-button class="active"></div>
+    <!-- Esta div representa o botão de acesso ao VLibras. Tem um atributo customizado 'vw-access-button' e a classe 'active', indicando que o botão está ativo e visível. -->
+   
+    <div vw-plugin-wrapper>
+        <!-- Esta div atua como um contêiner para o plugin VLibras. O atributo 'vw-plugin-wrapper' provavelmente é utilizado para o plugin identificar onde deve ser inserido seu conteúdo. -->
+       
+        <div class="vw-plugin-top-wrapper"></div>
+        <!-- Esta div interna pode ser utilizada para posicionar elementos ou funcionalidades adicionais do plugin VLibras na parte superior do widget. -->
+    </div>
+</div>
+<!-- Inclusão do script do plugin VLibras -->
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<!-- Este script carrega o arquivo JavaScript do plugin VLibras diretamente do servidor do VLibras. -->
+
+<script >
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+// Este script inicializa o widget VLibras. A função 'VLibras.Widget' é chamada com a URL base do app VLibras, configurando o widget no site.
+
+// Adiciona um evento de mudança ao elemento com o id 'color-filter'
+document.getElementById('color-filter').addEventListener('change', function() {
+    // atribui o valor da propriedade value do elemento atual à variável filterClass.
+    const filterClass = this.value; /*váriavel constante*/
+
+    // Seleciona todas as imagens com a classe 'filter-image'
+    const images = document.querySelectorAll('.filter-image');
+
+    // Para cada imagem selecionada... método de array que executa uma função para cada elemento do array.
+    images.forEach(img => {
+        // Remove todas as classes existentes da imagem, exceto 'filter-image'
+        img.className = 'filter-image'; // Reset the class
+
+        // Se a classe selecionada não for 'default' (ou seja, uma opção de filtro foi selecionada)...
+        if (filterClass !== 'default') {
+            // Adiciona a classe selecionada à imagem
+            img.classList.add(filterClass);
+        }
+    });
+});
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+:root {
+  --cor1: #00274d;
+  --cor3: #004080;
+  --cor4: #00274d;
+  --cor5: #338de6;
+  --white: #fff;
+  --white1: #fff;
+  --white2: #fff;
+  --gray1: #8c9a9f;
+  --gray2: #81888C;
+  --gray3: #525559;
+  --black1: #101010;
+  --black2: #0c0c0cce;
+  --btn-bg-1: #27A4F2;
+  --btn-bg-2: #2540D9;
+  --cl1:#021F59;
+  --cl2:#0468BF;
+  --cl3:#BF1120;
+  --cl4:#027333;
+  --cl5:#343840;
+  --grad1:rgba(255,255,255,1);
+  --grad2: rgba(217,217,217,1);
+  --grad3:rgba(191,191,191,1) ;
+
+}
+body.dark {
+  --cor1: #101010;
+  --cor2: #0f0f0fde;
+  --cor3: #181818;
+  --cor4: #9c9c9c;
+  --cor5: #BDBEBF;
+  --white: #050505;
+  --white1: #0c0c0cce;
+  --white2: #1D2326;
+  --gray1: #101010;
+  --gray2: #fff;
+  --gray3: #ecebeb;
+  --black1: #fff;
+  --black2: #81888C;
+  --cl1:#0c0c0cce;
+  --cl2:#0c0c0cce;
+  --cl3:#0c0c0cce;
+  --cl4:#0c0c0cce;
+  --cl5:#0c0c0cce;
+  --grad1:#1D2326;
+  --grad2: #1D2326;
+  --grad3:#1D2326;
+
+}
+.canto{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  border-bottom-left-radius: 20px;
+align-items: center;
+justify-content: center;
+
+  background-color: var(--cl1);
+}
+.esquerda{
+  width: 70%;
+  height: 100%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.direita {
+  display: flex;
+  background: var(--gray1);
+  align-items: center;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  padding: 4rem;
+}
+
+#gif-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+#animated-gif {
+  width: 100%;
+  height: 100%;
+  min-width: 10rem;
+  min-height: 10rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+/*.animated{
+
+} */
+#pause-button {
+  height: 2.5rem;
+  margin: auto;
+  width: 100px;
+  border-radius: 14px;
+  background: var(--cl1);
+  color: #fff;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+#pause-button:hover {
+  background-color: #58585a;
+  color: #fff;
+}
+#pause-button > i {
+  background: transparent;
+  font-size: 1.2rem;
+  margin: auto;
+  line-height: 0.60px;
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.darkLight {
+  display: flex;
+  align-items: center;
+}
+
+.darkLight .dark-light {
+  height: auto;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dark-light i {
+  color: #fff;
+  position: absolute;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dark-light i.sun {
+  opacity: 0;
+  pointer-events: none;
+}
+.dark-light.active i.sun {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Cabeçalho fixo no topo */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor1); /* Azul escuro */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Fixa o cabeçalho sobre o conteúdo */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+
+/* Conteúdo Principal */
+body {
+  padding-top: 60px; /* Para não sobrepor o cabeçalho */
+  
+}
+.menu-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-options button {
+  background-color: var(--cor3); /* Azul mais claro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.menu-options button:hover {
+  background-color: var(--cor4); /* Azul escuro */
+  transform: scale(1.05);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3.5rem 4rem;
+  background: var(--cor2);
+  border: solid 1px transparent;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.185);
+}
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+/* From Uiverse.io by Allyhere */ 
+.btn-donate {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 1rem;
+  min-width: 120px;
+  min-height: 44px;
+  font-size:  1.2rem;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: 0.5em;
+  color:#ffffff;
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+
+h1, .title {
+  text-align: center;
+  color: var(--gray3);
+}
+.title{
+ font-size: 2.5rem;
+}
+label {
+  color: var(--gray2);
+  display: block;
+  font-weight: bold;
+}
+
+form .form-group input,
+form .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray1);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: var(--white1);
+  color: var(--black1);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--cor4);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+.menu-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin: 10px 0;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: var(--btn-bg-1);
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu-list a:hover {
+  color: var(--cor4);
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem;
+  width: 100%;
+  height: 100%;
+  background: var(--white1);
+  background: radial-gradient(circle, var(--grad1) 22%, var(--grad3) 64%, var(--grad3) 100%);}
+
+  .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 700px;
+  margin: 1rem auto ;
+  padding: 3rem;
+  background: var(--white1);
+  border: solid 1px transparent;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.185);
+}
+#cadastroForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+.container-btt{
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray2);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+form .form-group {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form .form-group label {
+  font-weight: bold;
+  display: block;
+}
+
+
+.salvar{
+  background-color: var(--cl1) ;
+}
+.alterar{
+  background-color: var( --cl2) ;
+}
+.deletar{
+  background-color: var(--cl3) ;
+}
+.consultar{
+  background-color:var(--cl4) ;
+}
+.sair{
+  background-color: var(--cl5) ;
+}
+form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8rem;
+  width: 100%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+ filter: brightness(0.75);
+}
+
+.back-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:  0.3s;
+}
+
+.back-button:hover {
+  background-color: #c62828;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor1); /* Azul escuro */
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login{
+
+  background: radial-gradient(circle, rgba(255,255,255,1) 22%, rgba(217,217,217,1) 64%, rgba(191,191,191,1) 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100%;
+}
+.menuImg{
+  background-image: url(ímg/backgroud.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
+  height: 100vh;
+  width: 100vw;
+}
+.menu{
+  background-color: var(--white2);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+}
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 10px;
+  transition:0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+ border-bottom: 2px solid #fff;
+}
+
+/* Conteúdo Principal */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+.menu-container h1 {
+  color: var(--cor1);
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.menu-container p {
+  color: var(--gray2);
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.menu-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-options button {
+  background-color: var(--cor3); /* Azul mais claro */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.menu-options button:hover {
+  background-color: var(--cor5); /* Azul escuro */
+  color: var(--white2);
+  transform: scale(1.05);
+}
+
+
+

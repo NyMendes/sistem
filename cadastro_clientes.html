@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/1.0.0/css/font-awesome.css"
+    integrity="sha512-YX9NLok9RLg+o5JkA2Whp1kPDCBCEUolTyYykJVOe1xcaTNebXU/x02TxV0LpVYqVNJV5NVjyoMW0jHnJWICKg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-container">
+        <img src="ímg/logo.png" alt="Logo da Empresa" class="logo">
+    </div>
+    <nav>
+        <a href="menu.html">Menu</a>
+        <a href="cadastro_clientes.html">Cadastro de Clientes</a>
+        <a href="lista_clientes.html">Listar Clientes</a>
+        <a href="index.html">Sair</a>
+        <div class="darkLight">
+            <div class="dark-light">
+              <i class="bx bx-moon moon"></i>
+              <i class="bx bx-sun sun"></i>
+            </div>
+        </div>
+    </nav>
+    
+</header>
+
+<main class="container">
+    <div class="form-container">
+        <h1>Cadastro de Clientes</h1>
+        <form id="cadastroForm">
+            <!-- Campos obrigatórios -->
+            <div class="form-group"><label for="codigo">Código:</label><input type="text" id="codigo" name="codigo" required></div>
+            <div class="form-group"><label for="loja">Loja:</label><input type="text" id="loja" name="loja" required></div>
+            <div class="form-group"><label for="nome">Nome:</label><input type="text" id="nome" name="nome" required></div>
+            <div class="form-group"><label for="nomeFantasia">Nome Fantasia:</label><input type="text" id="nomeFantasia" name="nomeFantasia" required></div>
+            <div class="form-group"><label for="tipo">Física/Jurídica:</label><select id="tipo" name="tipo" required><option value="" disabled selected>Selecione</option><option value="fisica">Física</option><option value="juridica">Jurídica</option></select></div>
+            <div class="form-group"><label for="cnpjCpf">CNPJ/CPF:</label><input type="text" id="cnpjCpf" name="cnpjCpf" required></div>
+            <div class="form-group"><label for="dataNascimento">Data Nascimento:</label><input type="date" id="dataNascimento" name="dataNascimento" required></div>
+            <div class="form-group"><label for="codigoMunicipio">Código Município:</label><input type="text" id="codigoMunicipio" name="codigoMunicipio" required></div>
+
+            <!-- Campos opcionais -->
+            <div class="form-group"><label for="telefoneCelular">Telefone Celular:</label><input type="text" id="telefoneCelular" name="telefoneCelular"></div>
+            <div class="form-group"><label for="inscricaoEstadual">Inscrição Estadual:</label><input type="text" id="inscricaoEstadual" name="inscricaoEstadual"></div>
+            <div class="form-group"><label for="contato">Contato:</label><input type="text" id="contato" name="contato"></div>
+
+            <section class="container-btt">
+                    <button class="salvar" type="submit"onclick="salvarCliente()">Salvar Cliente</button>
+                    <button class="alterar" onclick="alterarCliente()">Alterar</button>
+                    <button class="deletar" onclick="deletarCliente()">Deletar</button>
+                    <button class="consultar" onclick="consultarCliente()">Consultar Cliente</button>
+                    <button class="sair" onclick="location.href='index.html'">Sair</button>
+            </section>
+        </form>
+    </div>
+</main>
+   
+    <script>
+        document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            console.log(Object.fromEntries(formData.entries()));
+            alert("Cliente cadastrado com sucesso!");
+            event.target.reset();
+        });
+    </script>
+    <!-- Código do VLibras -->
+<!-- Início do código relacionado ao plugin VLibras -->
+<div vw class="enabled">
+    <!-- Esta div possui o atributo customizado 'vw' e a classe 'enabled', que  são usados pelo plugin VLibras para identificar e estilizar o contêiner principal do widget. -->
+   
+    <div vw-access-button class="active"></div>
+    <!-- Esta div representa o botão de acesso ao VLibras. Tem um atributo customizado 'vw-access-button' e a classe 'active', indicando que o botão está ativo e visível. -->
+   
+    <div vw-plugin-wrapper>
+        <!-- Esta div atua como um contêiner para o plugin VLibras. O atributo 'vw-plugin-wrapper' provavelmente é utilizado para o plugin identificar onde deve ser inserido seu conteúdo. -->
+       
+        <div class="vw-plugin-top-wrapper"></div>
+        <!-- Esta div interna pode ser utilizada para posicionar elementos ou funcionalidades adicionais do plugin VLibras na parte superior do widget. -->
+    </div>
+</div>
+<!-- Inclusão do script do plugin VLibras -->
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<!-- Este script carrega o arquivo JavaScript do plugin VLibras diretamente do servidor do VLibras. -->
+
+<script >
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+// Este script inicializa o widget VLibras. A função 'VLibras.Widget' é chamada com a URL base do app VLibras, configurando o widget no site.
+
+// Adiciona um evento de mudança ao elemento com o id 'color-filter'
+document.getElementById('color-filter').addEventListener('change', function() {
+    // atribui o valor da propriedade value do elemento atual à variável filterClass.
+    const filterClass = this.value; /*váriavel constante*/
+
+    // Seleciona todas as imagens com a classe 'filter-image'
+    const images = document.querySelectorAll('.filter-image');
+
+    // Para cada imagem selecionada... método de array que executa uma função para cada elemento do array.
+    images.forEach(img => {
+        // Remove todas as classes existentes da imagem, exceto 'filter-image'
+        img.className = 'filter-image'; // Reset the class
+
+        // Se a classe selecionada não for 'default' (ou seja, uma opção de filtro foi selecionada)...
+        if (filterClass !== 'default') {
+            // Adiciona a classe selecionada à imagem
+            img.classList.add(filterClass);
+        }
+    });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

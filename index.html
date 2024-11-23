@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/1.0.0/css/font-awesome.css"
+    integrity="sha512-YX9NLok9RLg+o5JkA2Whp1kPDCBCEUolTyYykJVOe1xcaTNebXU/x02TxV0LpVYqVNJV5NVjyoMW0jHnJWICKg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <main class="login">
+        <div class="esquerda">
+            <div class="login-container">
+                <h1 class="title">Login</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Nome:</label>
+                        <input type="text" id="username" name="username" placeholder="Insira seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha: </label>
+                        <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+                    </div>
+                    <button class="btn-donate" type="submit">Login</button>
+                </form>
+                <p id="error-message"></p>
+            </div>
+        </div>
+        <div class="direita">
+            <div class="canto">
+                <div class="darkLight">
+                    <div class="dark-light">
+                      <i class="bx bx-moon moon"></i>
+                      <i class="bx bx-sun sun"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="gif-container">
+              <img
+                id="animated-gif"
+                class="animated"
+                src=" https://media.giphy.com/media/l4pTggBKz7vqqF9TO/giphy.gif"
+
+                alt="Animated GIF"
+              />
+              <!-- https://media.giphy.com/media/l378rBAbeCPY1uoOA/giphy.gif 
+               https://media.giphy.com/media/3ohhwEVKBOZd7bCQ7u/giphy.gif
+               https://media.giphy.com/media/xT9IgzmIOFMa6vOQW4/giphy.gif -->
+
+              <button id="pause-button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <script >
+        
+const animatedGif = document.getElementById('animated-gif')
+const pauseButton = document.getElementById('pause-button')
+let isPaused = false
+let gifSrc = animatedGif.src
+
+const textButtonPlay = `<i class = "fa-solid fa-xmark"></i>`
+const textButtonPause = ` <i class = "fa-solid fa-arrow-left"></i>`
+
+pauseButton.addEventListener('click', () => {
+  if (isPaused) {
+    animatedGif.src = gifSrc
+    pauseButton.innerHTML = textButtonPlay
+  } else {
+    gifSrc = animatedGif.src
+    animatedGif.src = ''
+    pauseButton.innerHTML = textButtonPause
+  }
+  isPaused = !isPaused
+})
+    </script>
+<script src="script.js"></script>
+</body>
+</html>
